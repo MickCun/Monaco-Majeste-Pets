@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>Dog Years Calculator</title>
+    </head>
+    <body>
+        <nav>
+            <h1>Dog Years Calculator</h1>
+        </nav>
+        <section class="calculator">
+            <form>
+                <p>Enter the dogs age in Human Years:</p>
+                <input type="text" id="ageInserter"/>
+                <button type="submit" id="submit-button">Calculate</button>
+            </form>
+        </section>
+        <footer>
+
+        </footer>
+
+    </body>
+    <script>
+        document.getElementById("submit-button").addEventListener("click", function(event) {
+            // Prevent the page from reloading. 
+            event.preventDefault(); 
+
+            let input = document.getElementById("ageInserter").value;
+            let dogAge = 0; 
+
+            // AVMA Rule (General Rule For Dog Ages)
+            if (input > 0) {
+                dogAge += 15; 
+            }
+            if (input > 1) {
+                dogAge += 9;
+            }
+            if (input > 2) {
+                input = input - 2; 
+                for(let i = 0; i < input; i++){
+                    dogAge += 5; 
+                }
+            }
+            
+            console.log("Your dogs age: ", dogAge)
+        })
+        console.log("test")
+    </script>
+</html>
