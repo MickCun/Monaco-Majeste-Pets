@@ -23,14 +23,46 @@
             </div>
         </section>
 
-
-        <section class="calculator">
-            <form>
-                <p>Enter the dogs age in Human Years:</p>
-                <input type="text" id="ageInserter"/>
-                <button type="submit" id="submit-button">Calculate</button>
-            </form>
+        <section class="quote">
+            <blockquote>
+                “I created Monaco Majesté Pets to offer the same level of discretion, attention, and devotion that Monaco’s elite expect for the companions they treasure most.”
+                <br>
+                <br>
+                <cite>Michael Cunningham, Founder</cite>
+            </blockquote>
         </section>
+
+        <section class="offerings">
+            <div class="form-block">
+                <h2 class="form-heading">Browse Our Services</h2>
+                <form>
+                    <label for="petName">Pet Name:</label>
+                    <input type="text" id="petName"/>
+                    <label for="petAge">Pet Age:</label>
+                    <input type="text" id="petAge"/>
+                    <button type="submit" id="submit-button">View Services</button>
+                </form>
+            </div>
+        </section>
+
+        <h2 class="gallery-heading">Our Gallery</h2>
+        <section class="latest-images">     
+            <img class="imgPatDown" src="src/images/monaco-d-1.jpg" height="300px"/>
+            <img class="imgPatUp" src="src/images/monaco-d-2.jpg" height="300px"/>
+            <img class="imgPatDown" src="src/images/monaco-d-3.webp" height="300px"/>
+            <img class="imgPatUp" src="src/images/monaco-d-4.jpg" height="300px"/>
+            <img class="imgPatDown" src="src/images/monaco-d-5.jpg" height="300px"/>
+            <img class="imgPatUp" src="src/images/monaco-d-6.jpg" height="300px"/>
+            <img class="imgPatDown" src="src/images/monaco-d-7.webp" height="300px"/>
+            <img class="imgPatUp" src="src/images/monaco-d-8.jpeg" height="300px"/>
+            <img class="imgPatDown" src="src/images/monaco-d-9.jpeg"height="300px"/>
+            <img class="imgPatUp" src="src/images/monaco-d-10.jpg"height="300px"/>
+            <img class="imgPatDown" src="src/images/monaco-d-11.jpg"height="300px"/>
+
+
+        </section>
+
+        
         <footer>
 
         </footer>
@@ -41,7 +73,7 @@
             // Prevent the page from reloading. 
             event.preventDefault(); 
 
-            let rawInput = document.getElementById("ageInserter").value;
+            let rawInput = document.getElementById("petAge").value;
             let input = Number(rawInput)
             let dogAge = 0; 
 

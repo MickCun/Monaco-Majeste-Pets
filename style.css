@@ -45,3 +45,71 @@ nav {
     font-family: 'GFS Didot', serif;
     padding: 20px;
 }
+
+.quote {
+    font-size: 25px;
+    width: 40%;
+    margin: 50px auto;
+    text-align: center;
+    color: #B6A593;
+}
+
+.form-block {
+    width: 80%;
+    background-color: #274374;
+    border-radius: 3px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: lighter;
+    padding-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #8295a2;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #bfc4c7;
+}
+
+.form-heading {
+    font-family: "Montserrat", sans-serif;  
+    font-weight: lighter;
+    padding: 20px 0px;
+}
+
+.latest-images {
+    height: 500px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.latest-images, img {
+    display: inline-block;
+}
+
+.imgPatUp {
+    padding-bottom: 30px;
+}
+
+.gallery-heading {
+    font-family: "Montserrat", sans-serif; 
+    font-size: 35px;
+    text-align: center;
+    font-weight: lighter;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
