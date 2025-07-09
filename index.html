@@ -3,11 +3,27 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css">
         <title>Dog Years Calculator</title>
+
+        <!-- Font Imports -->
+        <!-- Fonts: GFS Didot, Montserrat -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav>
-            <h1>Dog Years Calculator</h1>
+            <h1>Monaco Majesté Pets</h1>
         </nav>
+
+        <section class="masthead">
+            <video class="masthead-video" muted autoplay loop src="src/video/masthead-video.mp4">Video not available</video>
+            <div class="masthead-overlay">
+                <h2>Where Prestige Meets Paws</h2>
+                <p>Discreet. Devoted. Distinctly Monaco.</p>
+            </div>
+        </section>
+
+
         <section class="calculator">
             <form>
                 <p>Enter the dogs age in Human Years:</p>
@@ -25,25 +41,29 @@
             // Prevent the page from reloading. 
             event.preventDefault(); 
 
-            let input = document.getElementById("ageInserter").value;
+            let rawInput = document.getElementById("ageInserter").value;
+            let input = Number(rawInput)
             let dogAge = 0; 
 
             // AVMA Rule (General Rule For Dog Ages)
-            if (input > 0) {
-                dogAge += 15; 
-            }
-            if (input > 1) {
-                dogAge += 9;
-            }
-            if (input > 2) {
-                input = input - 2; 
-                for(let i = 0; i < input; i++){
-                    dogAge += 5; 
+            if(input > 0 && input < 100 && Number.isInteger(input)) {
+                if (input > 0) {
+                    dogAge += 15; 
                 }
+                if (input > 1) {
+                    dogAge += 9;
+                }
+                if (input > 2) {
+                    input = input - 2; 
+                    for(let i = 0; i < input; i++){
+                        dogAge += 5; 
+                    }
+                }
+                console.log(dogAge)
             }
-            
-            console.log("Your dogs age: ", dogAge)
+            if(!Number.isInteger(input)) {
+                console.log("Invalid Input")
+            }  
         })
-        console.log("test")
     </script>
 </html>
