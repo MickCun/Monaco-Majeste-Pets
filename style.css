@@ -65,6 +65,8 @@ nav {
     font-size: 25px;
     font-weight: lighter;
     padding-bottom: 15px;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
 }
 
 input {
@@ -129,11 +131,20 @@ button:hover {
     padding-bottom: 50px;
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
 .card {
     display: block;
+    flex-wrap: wrap;
     margin-top: 100px;
     border-radius: 10px;
-    width: 400px;
+    max-width: 400px;
+    min-width: 300px;
     height: 400px;
     background-color: white;
     text-align: center;
@@ -166,14 +177,13 @@ h4 {
     color: #B6A593;
 }
 
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.card1, .card2, .card3 {
+    margin-top: 100px;
+    transition: margin-top 0.3s ease;
 }
 
-.middle-card {
-    margin-top: 60px;
+.card1:hover, .card2:hover, .card3:hover {
+    margin-top: 80px;
 }
 
 .contact-us {
@@ -201,4 +211,52 @@ footer {
 
 .linkedIn:hover {
     color: rgb(179, 179, 179)
+}
+
+.hidden {
+    display: none;
+}
+
+.offerings-list {
+    width: 95%;
+    margin: 45px auto;
+    background-color: white;
+}
+
+.offering-heading {
+    width: 90%;
+    background-color: #667690;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+    color: black;
+    padding: 10px;
+}
+
+.pet-age-info {
+    margin-top: 50px;
+    font-size: 20px;
+    line-height: 0px;
+}
+
+.pet-age {
+    margin-top: 13px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.years-old {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .quote {
+        width: 80%;
+    }
+
+    .contact-us {
+        padding: 50px;
+    }
 }

@@ -41,11 +41,23 @@
                 <h2 class="form-heading">Browse Our Services</h2>
                 <form>
                     <label for="petName">Pet Name:</label>
-                    <input type="text" id="petName"/>
+                    <input type="text" required id="petNameInput"/>
                     <label for="petAge">Pet Age:</label>
-                    <input type="text" id="petAge"/>
+                    <input type="text" required id="petAge"/>
                     <button type="submit" id="submit-button">View Services</button>
                 </form>
+            
+                <div class="age-based-offerings hidden" id="age-based-offerings">
+                    <p class="pet-age-info">Did you know <span id="petNameDisplay2"></span> is</p>
+                    <p id="pet-age" class="pet-age"></p>
+                    <p class="years-old">Dog Years Old!</p>
+
+
+                    <div class="offerings-list">
+                        <h4 class="offering-heading">What we'll offer <span id="petNameDisplay"></span></h4>
+                        <p id="offer-list"></p>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -69,7 +81,7 @@
         <section class="promotions-card">
             <h2 class="promotions-heading">Promotions</h2>
             <div class="cards">
-                <div class="card">
+                <div class="card card1">
                     <img src="src/images/yacht-show.jpeg" class="card-image" height="200px" width="200x">
                     <div class="card-body">
                         <h4>Yacht Show</h4>
@@ -80,7 +92,7 @@
                         <p>Contact us for quotations.</p>
                     </div>
                 </div>
-                <div class="card middle-card">
+                <div class="card card2">
                     <img src="src/images/clerc-1.jpg" class="card-image" height="200px" width="200x">
                     <div class="card-body">
                         <h4>F1 Week</h4>
@@ -91,7 +103,7 @@
                         <p>Contact us for quotations.</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card card3">
                     <img src="src/images/monaco-horse.jpeg" class="card-image" height="200px" width="200x">
                     <div class="card-body">
                         <h4>Jumping Intern.</h4>
@@ -124,6 +136,8 @@
             event.preventDefault(); 
 
             let rawInput = document.getElementById("petAge").value;
+            let petName = document.getElementById("petNameInput").value;
+
             let input = Number(rawInput)
             let dogAge = 0; 
 
@@ -146,6 +160,57 @@
             if(!Number.isInteger(input)) {
                 console.log("Invalid Input")
             }  
+
+            // Toggle Visibility of Services Block
+            document.getElementById("age-based-offerings").classList.remove("hidden");
+
+            // Set the age of the pet
+            let petAgeInserter = document.getElementById("pet-age")
+            petAgeInserter.innerText = dogAge;
+
+            // Set name
+            document.getElementById("petNameDisplay").textContent = petName;
+
+            // Set name again
+            document.getElementById("petNameDisplay2").textContent = petName;
+
+            // Create the offering body
+            let offeringBody = document.getElementById("offer-list")
+
+            if (rawInput <= 1) {
+                offeringBody.innerHTML = `
+                    <ul>
+                        <li>Socialization Sessions</li>
+                        <li>Obedience Training with Private Handler</li>
+                        <li>Soft Grooming & Coat Conditioning</li>
+                        <li>Designer Puppy Essentials Welcome Kit</li>
+                    </ul>
+
+                    <p>Contact our team for special requests</p>
+                `;  
+            } else if (rawInput > 1 && rawInput <= 7) {
+                offeringBody.innerHTML = `
+                    <ul>
+                        <li>Riviera Strolls with Elite Handlers</li>
+                        <li>On-Call Butler Service (Feeding, Play, Wellness)</li>
+                        <li>Canine Spa & Massage</li>
+                        <li>Yacht & Jet-Ready Travel Prep</li>
+                    </ul>
+
+                    <p>Contact our team for special requests</p>
+                `;  
+            } else if (rawInput > 7) {
+                offeringBody.innerHTML = `
+                    <ul>
+                        <li>Vet-Backed Wellness Monitoring</li>
+                        <li>Gentle Daily Movement Routines</li>
+                        <li>Quiet Care & Companion Sitting</li>
+                        <li>Special Senior Nutrition & Supplements</li>
+                    </ul>
+
+                    <p style="color: black;">Contact our team for special requests</p>
+                `;  
+            } 
         })
     </script>
 </html>
